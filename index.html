@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Gabriel Alves</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #222;
+      color: #fff;
+      padding: 15px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #00adb5;
+    }
+
+    section {
+      padding: 80px 20px;
+      min-height: 100vh;
+    }
+
+    h1, h2 {
+      margin-bottom: 15px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px;
+      background: #00adb5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #007b80;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Menu de navegação -->
+  <header>
+    <nav>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#formacao">Formação</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Sobre mim -->
+  <section id="sobre">
+    <div class="container">
+      <div class="card">
+        <h1>Gabriel de Oliveira Costa Alves</h1>
+        <p>Tenho 22 anos, moro em São Paulo e sou casado. Atualmente curso Análise e Desenvolvimento de Sistemas e trabalho na área de automação na Heineken.</p>
+        <p>Sou apaixonado por música e toco violão há mais de 8 anos. A fé também é uma parte muito importante da minha vida, sendo católico e devoto de Santo Afonso Maria de Ligório.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formação -->
+  <section id="formacao">
+    <div class="container">
+      <div class="card">
+        <h2>Formação</h2>
+        <p>🎓 Curso: Análise e Desenvolvimento de Sistemas</p>
+        <p>💼 Experiência: Trabalho com automação industrial na empresa Heineken</p>
+        <p>🌍 Idiomas: Português (nativo)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfólio -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="card">
+        <h2>Portfólio</h2>
+        <p>Em desenvolvimento... Em breve adicionarei meus projetos aqui!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato">
+    <div class="container">
+      <div class="card">
+        <h2>Contato</h2>
+
+        <form id="formContato">
+          <input type="text" id="nome" placeholder="Seu nome">
+          <input type="email" id="email" placeholder="Seu e-mail">
+          <textarea id="mensagem" rows="5" placeholder="Sua mensagem"></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Validação do formulário
+    document.getElementById("formContato").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let nome = document.getElementById("nome").value;
+      let email = document.getElementById("email").value;
+      let mensagem = document.getElementById("mensagem").value;
+
+      // Verifica se os campos estão preenchidos
+      if (nome === "" || email === "" || mensagem === "") {
+        alert("Preencha todos os campos!");
+        return;
+      }
+
+      // Validação simples de email
+      if (!email.includes("@") || !email.includes(".")) {
+        alert("Digite um e-mail válido!");
+        return;
+      }
+
+      // Se estiver tudo certo
+      alert("Mensagem enviada com sucesso!");
+
+      // Limpa os campos
+      document.getElementById("formContato").reset();
+    });
+  </script>
+
+</body>
+</html>
